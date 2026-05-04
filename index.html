@@ -3,89 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fatfire.com - Financial Independence and Early Retirement</title>
-    <meta name="description" content="Fatfire.com helps high earners achieve financial independence and retire early without sacrificing quality of life. Strategies, tools, and community for the Fat FIRE path.">
+    <title>Fatfire.com - Financial Independence Without Compromise</title>
+    <meta name="description" content="Fatfire.com is the leading resource for high-income earners pursuing financial independence and early retirement. Calculators, guides, tax strategy, and investment insights for the Fat FIRE path.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://leefti.github.io/fatfire-site/">
-    <meta property="og:title" content="Fatfire.com - Financial Independence and Early Retirement">
-    <meta property="og:description" content="Strategies, tools, and community for achieving financial independence with a high quality of life.">
+    <meta property="og:title" content="Fatfire.com - Financial Independence Without Compromise">
+    <meta property="og:description" content="Calculators, guides, tax strategy, and investment insights for high earners pursuing early retirement.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://leefti.github.io/fatfire-site/">
     <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #f59e0b;
+            --accent-dark: #d97706;
+            --text: #334155;
+            --text-light: #64748b;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            color: #1a1a1a;
-            line-height: 1.7;
-            background: #fafafa;
-        }
-        header {
-            background: #0d1b2a;
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-        header h1 { font-size: 2.4rem; margin-bottom: 12px; }
-        header p { font-size: 1.15rem; opacity: 0.85; max-width: 600px; margin: 0 auto; }
-        main { max-width: 780px; margin: 0 auto; padding: 40px 20px 60px; }
-        h2 { font-size: 1.5rem; margin: 36px 0 16px; color: #0d1b2a; }
-        p { margin-bottom: 16px; color: #333; }
-        ul { margin: 0 0 20px 24px; }
-        li { margin-bottom: 8px; color: #333; }
-        a { color: #1a6dd4; text-decoration: none; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); line-height: 1.7; background: var(--bg); }
+        a { color: var(--accent-dark); text-decoration: none; font-weight: 500; }
         a:hover { text-decoration: underline; }
-        .cta {
-            background: #0d1b2a;
+
+        .hero {
+            background: var(--primary);
+            color: white;
+            padding: 80px 24px 60px;
+            text-align: center;
+        }
+        .hero-badge { display: inline-block; background: rgba(245,158,11,0.15); color: var(--accent); font-size: 0.8rem; font-weight: 600; padding: 6px 16px; border-radius: 20px; margin-bottom: 20px; letter-spacing: 0.5px; text-transform: uppercase; }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 16px; letter-spacing: -0.5px; }
+        .hero p { font-size: 1.15rem; opacity: 0.8; max-width: 560px; margin: 0 auto; }
+
+        .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+        .section { padding: 48px 0; }
+        .section-title { font-size: 1.6rem; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+        .section-sub { color: var(--text-light); margin-bottom: 28px; }
+
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 32px; }
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); transform: translateY(-2px); }
+        .card h3 { font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+        .card p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 12px; }
+        .card a { font-size: 0.85rem; color: var(--accent-dark); font-weight: 600; }
+
+        .content-block { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 32px; margin-bottom: 24px; }
+        .content-block h2 { font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 12px; }
+        .content-block p { margin-bottom: 14px; }
+        .content-block ul { margin: 0 0 16px 20px; }
+        .content-block li { margin-bottom: 6px; font-size: 0.95rem; }
+
+        .link-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 20px 0; }
+        .link-item { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; font-size: 0.9rem; }
+        .link-item a { font-weight: 600; }
+
+        .cta-banner {
+            background: var(--primary);
             color: white;
             text-align: center;
-            padding: 40px 20px;
-            margin-top: 40px;
-            border-radius: 8px;
+            padding: 48px 24px;
+            border-radius: 16px;
+            margin: 32px 0;
         }
-        .cta a { color: #5bc0ff; font-size: 1.2rem; font-weight: 600; }
-        footer { text-align: center; padding: 30px; color: #888; font-size: 0.85rem; }
+        .cta-banner h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 12px; }
+        .cta-banner p { opacity: 0.8; margin-bottom: 20px; }
+        .cta-btn { display: inline-block; background: var(--accent); color: var(--primary); font-weight: 700; padding: 14px 32px; border-radius: 8px; font-size: 1rem; text-decoration: none; }
+        .cta-btn:hover { background: var(--accent-dark); color: white; text-decoration: none; }
+
+        footer { text-align: center; padding: 40px 24px; color: var(--text-light); font-size: 0.8rem; border-top: 1px solid var(--border); }
     </style>
 </head>
 <body>
-    <header>
+    <div class="hero">
+        <div class="hero-badge">Financial Independence</div>
         <h1>Fatfire.com</h1>
-        <p>Financial independence without compromise. Strategies for high earners who want to retire early and live well.</p>
-    </header>
-    <main>
-        <h2>What Is Fat FIRE?</h2>
-        <p>Fat FIRE is a subset of the financial independence, retire early (FIRE) movement focused on accumulating enough wealth to maintain a high standard of living after retirement. Unlike lean FIRE, which emphasizes extreme frugality, Fat FIRE targets a post-retirement annual spending of $100,000 or more, typically requiring a portfolio of $2.5 million and up.</p>
-        <p>The philosophy is straightforward: earn more, invest strategically, and build a life where early retirement doesn't mean downgrading your lifestyle.</p>
+        <p>The definitive resource for high earners building wealth and retiring early without sacrificing the life they want.</p>
+    </div>
 
-        <h2>Core Principles of Fat FIRE</h2>
-        <ul>
-            <li><strong>Income acceleration</strong> - Prioritize career moves, side businesses, and equity compensation that dramatically increase earnings</li>
-            <li><strong>Tax-efficient investing</strong> - Maximize tax-advantaged accounts, utilize tax-loss harvesting, and structure investments to minimize drag</li>
-            <li><strong>Asset allocation</strong> - Diversify across index funds, real estate, and alternative investments based on your timeline and risk tolerance</li>
-            <li><strong>Lifestyle design</strong> - Spend intentionally on what matters to you while cutting costs on things that don't move the needle</li>
-            <li><strong>Withdrawal strategy</strong> - Plan for decades of spending using dynamic withdrawal rates, Roth conversion ladders, and multiple income streams</li>
-        </ul>
+    <div class="container">
+        <div class="section">
+            <div class="section-title">What You'll Find</div>
+            <div class="section-sub">Guides, tools, and strategies for every stage of the Fat FIRE journey.</div>
 
-        <h2>How Much Do You Need?</h2>
-        <p>The standard Fat FIRE target depends on your desired annual spending. Using the 4% rule as a baseline (adjusted for conservatism to 3.5% for longer retirements), here are common benchmarks:</p>
-        <ul>
-            <li>$100K/year spending = $2.85M portfolio</li>
-            <li>$150K/year spending = $4.3M portfolio</li>
-            <li>$200K/year spending = $5.7M portfolio</li>
-            <li>$300K/year spending = $8.6M portfolio</li>
-        </ul>
-        <p>These numbers shift based on factors like geographic cost of living, healthcare costs before Medicare eligibility, family size, and whether you plan to maintain any income streams in retirement.</p>
-
-        <h2>Building Your Fat FIRE Plan</h2>
-        <p>A successful Fat FIRE journey starts with clarity on three numbers: your current savings rate, your target number, and your timeline. From there, the work is in optimizing income, investment returns, and tax efficiency across every available lever.</p>
-        <p>High-income professionals in tech, medicine, finance, and law are particularly well-positioned for Fat FIRE, but the principles apply to any high earner willing to be strategic about their financial trajectory.</p>
-
-        <div class="cta">
-            <p>Ready to start planning your path to financial independence?</p>
-            <p><a href="https://fatfire.com">Visit Fatfire.com</a></p>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Investing Guides</h3>
+                    <p>Index funds, alternative investments, S&P 500 analysis, and portfolio construction for high-net-worth investors.</p>
+                    <a href="https://fatfire.com/investing/">Explore investing &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>Tax Strategy</h3>
+                    <p>Advanced tax planning, deductions, Roth conversions, and optimization strategies for high earners.</p>
+                    <a href="https://fatfire.com/tax-strategy/">Explore tax strategy &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>Retirement Planning</h3>
+                    <p>Withdrawal strategies, benchmarks, account structures, and timelines for retiring decades early.</p>
+                    <a href="https://fatfire.com/retirement-planning/">Explore retirement &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>Wealth Management</h3>
+                    <p>Advisory services, estate planning, trusts, and strategies for protecting and growing wealth.</p>
+                    <a href="https://fatfire.com/wealth-management/">Explore wealth management &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>Entrepreneurship</h3>
+                    <p>Building, scaling, and exiting businesses as the accelerated path to financial independence.</p>
+                    <a href="https://fatfire.com/entrepreneurship/">Explore entrepreneurship &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>Real Estate</h3>
+                    <p>Real estate investing, rental income, REITs, and property-based wealth building strategies.</p>
+                    <a href="https://fatfire.com/real-estate/">Explore real estate &rarr;</a>
+                </div>
+            </div>
         </div>
-    </main>
+
+        <div class="content-block">
+            <h2>What Is Fat FIRE?</h2>
+            <p>Fat FIRE is a subset of the financial independence, retire early (FIRE) movement for people who want to retire early <em>without</em> living on a shoestring budget. While lean FIRE targets $30-40K per year in retirement spending, Fat FIRE aims for $100K or more, requiring a portfolio of $2.5M and up.</p>
+            <p>The philosophy centers on earning more and investing strategically rather than extreme frugality. It's for high-income professionals in tech, medicine, finance, law, and business who want freedom without compromise.</p>
+        </div>
+
+        <div class="content-block">
+            <h2>Free Tools</h2>
+            <p>Fatfire.com offers calculators designed specifically for high earners planning an early exit:</p>
+            <div class="link-grid">
+                <div class="link-item"><a href="https://fatfire.com/tools/withdrawal-calculator/">Withdrawal Calculator</a></div>
+                <div class="link-item"><a href="https://fatfire.com/tools/health-calculator/">Health Cost Calculator</a></div>
+                <div class="link-item"><a href="https://fatfire.com/what-is-fatfire/">Fat FIRE 101 Guide</a></div>
+                <div class="link-item"><a href="https://fatfire.com/blog/">Latest Articles</a></div>
+            </div>
+        </div>
+
+        <div class="content-block">
+            <h2>Popular Topics</h2>
+            <div class="link-grid">
+                <div class="link-item"><a href="https://fatfire.com/fatfire-manifesto/">Fat FIRE Manifesto</a></div>
+                <div class="link-item"><a href="https://fatfire.com/fatfire-tax-strategy/">Tax Strategy Guide</a></div>
+                <div class="link-item"><a href="https://fatfire.com/fatfire-healthcare-guide/">Healthcare Guide</a></div>
+                <div class="link-item"><a href="https://fatfire.com/one-more-year-syndrome/">One More Year Syndrome</a></div>
+                <div class="link-item"><a href="https://fatfire.com/estate-planning/">Estate Planning</a></div>
+                <div class="link-item"><a href="https://fatfire.com/sp-500/">S&P 500 Analysis</a></div>
+                <div class="link-item"><a href="https://fatfire.com/vanguard/">Vanguard Investing</a></div>
+                <div class="link-item"><a href="https://fatfire.com/private-equity/">Private Equity</a></div>
+                <div class="link-item"><a href="https://fatfire.com/financial-independence/">Financial Independence</a></div>
+                <div class="link-item"><a href="https://fatfire.com/career-and-compensation/">Career &amp; Compensation</a></div>
+            </div>
+        </div>
+
+        <div class="cta-banner">
+            <h2>Start Your Fat FIRE Journey</h2>
+            <p>Guides, calculators, and strategies built for high earners who refuse to settle.</p>
+            <a href="https://fatfire.com" class="cta-btn">Visit Fatfire.com</a>
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2026 Fatfire.com. All rights reserved.</p>
+        <p>&copy; 2026 Fatfire.com. All rights reserved. | <a href="https://fatfire.com/about/">About</a> | <a href="https://fatfire.com/privacy/">Privacy</a> | <a href="https://fatfire.com/terms/">Terms</a></p>
     </footer>
 </body>
 </html>
